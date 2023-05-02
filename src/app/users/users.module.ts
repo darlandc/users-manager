@@ -8,17 +8,13 @@ import { UsersEffects } from './state/effects/users.effects';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [
-    ListingComponent
-  ],
+  declarations: [ListingComponent],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ users: usersReducer}),
+    StoreModule.forFeature('users', usersReducer),
     EffectsModule.forRoot([UsersEffects]),
     StoreDevtoolsModule.instrument({}),
   ],
-  exports: [
-    ListingComponent
-  ]
+  exports: [ListingComponent],
 })
-export class UsersModule { }
+export class UsersModule {}
