@@ -3,7 +3,7 @@ import {
   loadUsers,
   loadUsersFailure,
   loadUsersSuccess,
-} from './actions/user.actions';
+} from '../../users/actions/user.actions';
 
 export interface UserState {
   users: any;

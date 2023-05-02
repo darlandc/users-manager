@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, first, of, toArray } from 'rxjs';
-import {
-  loadUsers,
-} from '../../../users/actions/user.actions';
-import { User } from '../../interfaces//user.interface';
+import { loadUsers } from '../../actions/user.actions';
+import { User } from '../../../shared/interfaces/user.interface';
 
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
 })
-export class ListingComponent {
+export class ListingComponent implements OnInit {
   users$: Observable<any>;
   users: User[] = [];
   error = '';
@@ -19,7 +17,7 @@ export class ListingComponent {
     this.users$ = store.pipe(select((state) => state.users.users));
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.store.dispatch(loadUsers());
   }
 }
