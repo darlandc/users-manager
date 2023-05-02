@@ -1,7 +1,9 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { UserState } from '../users.reducer';
 
+const getUserFeatureState = createFeatureSelector<UserState>('users');
+
 export const allUsersSelector = createSelector(
-  (state: any) => state.app.users,
-  (users: ReadonlyArray<UserState>) => users
+  getUserFeatureState,
+  (state: any) => state.users
 );

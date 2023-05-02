@@ -13,7 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ app: usersReducer}),
+    StoreModule.forRoot({ users: usersReducer}),
     EffectsModule.forRoot([UsersEffects]),
     StoreDevtoolsModule.instrument({}),
   ],
