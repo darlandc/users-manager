@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './state/users/reducers/user.reducer';
 import { SharedModule } from './shared/shared.module';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +16,6 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ users: userReducer }),
     SharedModule
   ],
   providers: [],

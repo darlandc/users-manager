@@ -7,7 +7,9 @@ import {
 import { User } from '../interfaces/user.interface';
 
 export interface UserState {
-  users: User[];
+  users: any;
+  user?: any;
+  error?: null
 }
 
 export const initialState: UserState = {
