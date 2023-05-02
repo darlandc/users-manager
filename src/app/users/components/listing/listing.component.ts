@@ -12,8 +12,6 @@ import { UserState } from '../../state/users.reducer';
 })
 export class ListingComponent implements OnInit {
   usersList$: Observable<any>;
-  users: User[] = [];
-  error = '';
 
   constructor(private store: Store<UserState>) {
     this.usersList$ = store.select(allUsersSelector);
