@@ -7,8 +7,9 @@ import {
 import { User } from '../interfaces/user.interface';
 
 export interface UserState {
+  activeLogon?: User;
   users: User[];
-  user?: User;
+  selectedUser?: User;
   error?: ''
 }
 
