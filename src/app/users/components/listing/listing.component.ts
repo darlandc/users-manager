@@ -3,18 +3,19 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { loadUsers } from '../../state/actions/users.actions';
 import { User } from '../../interfaces/user.interface';
+import { allUsersSelector } from '../../state/selectors/users.selector';
 
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
 })
 export class ListingComponent implements OnInit {
-  users$: Observable<any>;
+  usersList$: Observable<any>;
   users: User[] = [];
   error = '';
 
   constructor(private store: Store<any>) {
-    this.users$ = store.pipe(select((state) => state.app.users));
+    this.usersList$ = store.pipe(select(allUsersSelector));
   }
 
   ngOnInit(): void {

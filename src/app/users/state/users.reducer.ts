@@ -5,13 +5,13 @@ import {
   loadUsersSuccess,
 } from './actions/users.actions';
 
-export interface UserState {
+export interface UsersState {
   users: any;
   user?: any;
   error?: ''
 }
 
-export const initialState: UserState = {
+export const initialState: UsersState = {
   users: [],
 };
 
