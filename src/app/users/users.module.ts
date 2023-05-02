@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     BrowserModule,
     StoreModule.forRoot({ app: usersReducer}),
-    EffectsModule.forRoot(UsersEffects),
+    EffectsModule.forRoot([UsersEffects]),
     StoreDevtoolsModule.instrument({}),
   ],
   exports: [

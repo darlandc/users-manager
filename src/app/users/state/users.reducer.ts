@@ -4,14 +4,15 @@ import {
   loadUsersFailure,
   loadUsersSuccess,
 } from './actions/users.actions';
+import { User } from '../interfaces/user.interface';
 
-export interface UsersState {
-  users: any;
-  user?: any;
+export interface UserState {
+  users: User[];
+  user?: User;
   error?: ''
 }
 
-export const initialState: UsersState = {
+export const initialState: UserState = {
   users: [],
 };
 

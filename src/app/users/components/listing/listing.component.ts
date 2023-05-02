@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { loadUsers } from '../../state/actions/users.actions';
 import { User } from '../../interfaces/user.interface';
 import { allUsersSelector } from '../../state/selectors/users.selector';
+import { UserState } from '../../state/users.reducer';
 
 @Component({
   selector: 'app-listing',
@@ -14,8 +15,8 @@ export class ListingComponent implements OnInit {
   users: User[] = [];
   error = '';
 
-  constructor(private store: Store<any>) {
-    this.usersList$ = store.pipe(select(allUsersSelector));
+  constructor(private store: Store<UserState>) {
+    this.usersList$ = store.select(allUsersSelector);
   }
 
   ngOnInit(): void {
