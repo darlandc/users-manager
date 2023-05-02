@@ -1,7 +1,7 @@
 <!-- {{ users$ | async | json }} -->
 
 <div>
-  <div *ngFor="let user of users">
+  <div *ngFor="let user of users$ | async">
     <p>{{ user.name }} - {{ user.email }}</p>
   </div>
 </div>

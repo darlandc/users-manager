@@ -3,13 +3,12 @@ import {
   loadUsers,
   loadUsersFailure,
   loadUsersSuccess,
-} from '../actions/user.actions';
-import { User } from '../interfaces/user.interface';
+} from './actions/user.actions';
 
 export interface UserState {
   users: any;
   user?: any;
-  error?: null
+  error?: ''
 }
 
 export const initialState: UserState = {

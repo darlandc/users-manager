@@ -3,9 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable, first, of, toArray } from 'rxjs';
 import {
   loadUsers,
-  loadUsersSuccess,
-} from 'src/app/state/users/actions/user.actions';
-import { User } from 'src/app/state/users/interfaces/user.interface';
+} from '../../../users/actions/user.actions';
+import { User } from '../../interfaces//user.interface';
 
 @Component({
   selector: 'app-listing',
@@ -16,11 +15,11 @@ export class ListingComponent {
   users: User[] = [];
   error = '';
 
-  constructor(private store: Store<{ users: User[] }>) {
-    this.users$ = store.pipe(select((state) => state.users));
+  constructor(private store: Store<any>) {
+    this.users$ = store.pipe(select((state) => state.users.users));
+  }
+
+  ngOnInit() {
     this.store.dispatch(loadUsers());
-    this.users$.subscribe((users) => {
-      this.users = users.users;
-    });
   }
 }
