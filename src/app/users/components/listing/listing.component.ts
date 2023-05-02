@@ -14,7 +14,7 @@ export class ListingComponent implements OnInit {
   error = '';
 
   constructor(private store: Store<any>) {
-    this.users$ = store.pipe(select((state) => state.users.users));
+    this.users$ = store.pipe(select((state) => state.app.users));
   }
 
   ngOnInit(): void {
