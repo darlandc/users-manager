@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { User } from '../../shared/interfaces/user.interface';
+import { User } from '../../interfaces/user.interface';
 
 export const loadUsers = createAction('[User] Load Users');
 

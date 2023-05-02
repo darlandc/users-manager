@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Observable, first, of, toArray } from 'rxjs';
-import { loadUsers } from '../../actions/user.actions';
-import { User } from '../../../shared/interfaces/user.interface';
+import { Observable } from 'rxjs';
+import { loadUsers } from '../../state/actions/users.actions';
+import { User } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-listing',

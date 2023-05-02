@@ -3,7 +3,7 @@ import {
   loadUsers,
   loadUsersFailure,
   loadUsersSuccess,
-} from '../../users/actions/user.actions';
+} from './actions/users.actions';
 
 export interface UserState {
   users: any;
@@ -15,7 +15,7 @@ export const initialState: UserState = {
   users: [],
 };
 
-export const userReducer = createReducer(
+export const usersReducer = createReducer(
   initialState,
   on(loadUsers, (state) => ({ ...state })),
   on(loadUsersSuccess, (state, { users }) => ({ ...state, users })),
