@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { loadUsers } from '../../state/actions/users.actions';
 import { User } from '../../interfaces/user.interface';
-import { allUsersSelector } from '../../state/selectors/users.selector';
+import { selectUserList } from '../../state/selectors/users.selector';
 import { UserState } from '../../state/users.reducer';
 
 @Component({
@@ -14,7 +14,7 @@ export class ListingComponent implements OnInit {
   usersList$: Observable<any>;
 
   constructor(private store: Store<UserState>) {
-    this.usersList$ = store.select(allUsersSelector);
+    this.usersList$ = store.select(selectUserList);
   }
 
   ngOnInit(): void {
